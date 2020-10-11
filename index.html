@@ -87,12 +87,13 @@
       document.getElementById("friendship").append(friend.friendFlag)
       if (!friend.friendFlag) {
         if (confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อน จะเพิ่มเลยไหม?")) {
-          window.location = "https://line.me/R/ti/p/@YOUR-BOT-ID"
+          window.location = "https://line.me/R/ti/p/@629omsxu"
         }
       }
     }
 
     async function sendMsg() {
+      // send 5 bubbles at the same time. -> [{}, {}, {}, {}, {}]
       if (liff.getContext().type !== "none") {
         await liff.sendMessages([
           {
