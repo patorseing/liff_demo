@@ -74,10 +74,13 @@
       }
 
       async function scanCode() {
-        console.log('scan');
-        const result = await liff.scanCode();
-        console.log("scan code", result);
-        document.getElementById("scanCode").append(result.value);
+        if (liff.scanCode) {
+          const result = await liff.scanCode();
+          console.log("scan code", result);
+          document.getElementById("scanCode").append(result.value);
+        } else {
+          console.log('test scan');
+        }
       }
 
       function openWindow() {
